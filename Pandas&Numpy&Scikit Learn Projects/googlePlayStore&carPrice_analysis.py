@@ -37,7 +37,8 @@ from sklearn.impute import SimpleImputer
 from tkinter import *
 from tkinter import messagebox
 
-df = pd.read_csv("/Users/apple1/Downloads/archive (1)/googleplaystore.csv")
+df = pd.read_csv("https://github.com/cancell/Python_Projects/blob/master/Pandas%26Numpy%26Scikit%20Learn%20Projects/googleplaystore.csv") 
+#or you can added your own link from your desktop
 
 def to_numeric(field):
     # case 'M'
@@ -199,7 +200,7 @@ def start():
         btnback.place(x=1000,y=700)    
     
     def car():
-        car = pd.read_csv("/Users/apple1/Desktop/Desktop/Kurum Çalışmaları/inovaThink/Eğitim/Yapay Zeka/GlobalAI/carprice.csv")
+        car = pd.read_csv("https://github.com/cancell/Python_Projects/blob/master/Pandas%26Numpy%26Scikit%20Learn%20Projects/carprice.csv")
         predict = "price"
         car = car[["curbweight", "enginesize", "horsepower", "price"]]
         x = np.array(car.drop([predict], 1))
