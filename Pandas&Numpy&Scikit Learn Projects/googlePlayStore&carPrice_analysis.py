@@ -78,7 +78,7 @@ df['Type']        = cat_imputer.fit_transform(df[['Type']])
 
 
 window= Tk()
-window.title("A.D.I.S.N Data Predictor")
+window.title("Data Predictor")
 window.geometry("1366x768")
 
 C = Canvas(window, bg="blue", height=400, width=400)
@@ -88,13 +88,13 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 C.pack()
 
 
-lbl4=Label(window,width=30,text="Welcome to A.D.I.S.N Data Predictor :)")
+lbl4=Label(window,width=30,text="Welcome to Data Predictor :)")
 lbl4.config(font="Arial 30")
 lbl4.place(x=100,y=300)
 
 def start():
     new_window = Tk()
-    new_window.title("A.D.I.S.N")
+    new_window.title("Data Predictor")
     new_window.geometry("1366x768")
     window.withdraw()
     new_window.deiconify() 
@@ -112,18 +112,12 @@ def start():
         w.config(width=90, font=('Helvetica', 12))
         w.place(x=220,y=105)
         
-        # labelTest = Label(v_window, text="")
-        # labelTest.config(width=90, font=('Helvetica', 12))
-        # labelTest.pack(side="left")
-        # labelTest.place(x=220, y= 250)
 
         def backApp():
             v_window.withdraw()
             new_window.deiconify()
         def callback(*args):
             if veri.get()=="5 Star":
-                #df[df['Rating']==5].sort_values(['Price'],ascending=False).head(5)
-                #labelTest.configure(text=df[df['Rating']==5]["App"].head())
                 
                 text = Text(v_window, height=10, width=80)
                 text.place(x=220, y= 150)
@@ -201,6 +195,7 @@ def start():
     
     def car():
         car = pd.read_csv("https://github.com/cancell/Python_Projects/blob/master/Pandas%26Numpy%26Scikit%20Learn%20Projects/carprice.csv")
+        #or you can added your own link from your desktop
         predict = "price"
         car = car[["curbweight", "enginesize", "horsepower", "price"]]
         x = np.array(car.drop([predict], 1))
